@@ -12,17 +12,13 @@ app.listen(8008, function(){
   console.log('listening on 8008')
 })
 
-// Get HTML file (HOME)
-// app.get('/', (req, res) => {
-//   res.sendFile(__dirname + '/index.html')
-
-// })
 
 //send form.html
 app.get('/', (req, res) => {
   res.sendFile(__dirname + '/form.html')
-
 })
+
+
 
 // Set up multer storage for uploaded files
 const storage = multer.diskStorage({
@@ -57,5 +53,5 @@ app.post('/add', upload.single('stlfile'), (req, res) => {
     console.log('No file uploaded.');
   }
 
-  res.send('Transmission completed!');
+  res.send('Your file has been successfully uploaded.');
 });
